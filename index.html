@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        /* --- GENERAL STYLES --- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth; /* Makes clicking links scroll smoothly */
+        }
+        
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            position: sticky; /* Keeps header at top when scrolling */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        /* --- THE SPECIAL SIGN UP TAB --- */
+        .signup-tab {
+            background-color: #ff5733; /* Bright Orange */
+            padding: 10px 20px;
+            border-radius: 25px; /* Rounded button style */
+            font-weight: bold;
+            color: white !important; /* Force text to be white */
+            transition: background 0.3s;
+            border: 2px solid #ff5733;
+        }
+        .signup-tab:hover {
+            background-color: #fff;
+            color: #ff5733 !important;
+        }
+
+        /* --- SECTIONS --- */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        .hero {
+            background: #f4f4f4;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- SIGN UP FORM SECTION --- */
+        .signup-section {
+            background-color: #eef; 
+            border-radius: 10px; 
+            text-align: center;
+            padding: 40px;
+            border: 1px solid #ddd;
+        }
+        input[type="email"] {
+            padding: 12px;
+            width: 60%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #555;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#signup" class="signup-tab">Sign Up for Free Introduction</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero" id="home">
+        <h2>Hello, I'm [Your Name]</h2>
+        <p>Welcome to my professional portfolio.</p>
+        <a href="#signup" class="btn">Get Started</a>
+    </div>
+
+    <div class="container" id="about">
+        <h3>About Me</h3>
+        <p>Replace this text with your bio. Since you are editing this on GitHub, you can change this text anytime by clicking the pencil icon.</p>
+    </div>
+
+    <div class="container" id="signup">
+        <div class="signup-section">
+            <h3>Free Introduction</h3>
+            <p>Enter your email below to schedule your free introduction session.</p>
+            
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                <input type="email" name="email" placeholder="Enter your email address..." required>
+                <br>
+                <button type="submit" class="btn">Sign Up Now</button>
+            </form>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #666;">We will email you within 24 hours to set a time.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
