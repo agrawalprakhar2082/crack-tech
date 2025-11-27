@@ -8,12 +8,12 @@
     <style>
         /* --- BLUE & WHITE PROFESSIONAL THEME --- */
         :root {
-            --bg-color: #ffffff;          /* Pure White */
-            --primary-blue: #0052cc;      /* Tech Blue */
-            --dark-blue: #0747a6;         /* Darker Blue */
-            --text-main: #172b4d;         /* Navy/Black */
-            --text-secondary: #5e6c84;    /* Soft Grey */
-            --light-bg: #f4f5f7;          /* Light Grey Backgrounds */
+            --bg-color: #ffffff;
+            --primary-blue: #0052cc;
+            --dark-blue: #0747a6;
+            --text-main: #172b4d;
+            --text-secondary: #5e6c84;
+            --light-bg: #f4f5f7;
         }
 
         body {
@@ -23,7 +23,7 @@
             line-height: 1.6;
             color: var(--text-main);
             background-color: var(--bg-color);
-            scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevents horizontal scrollbar from the animation */
         }
         
         /* --- HEADER --- */
@@ -47,9 +47,8 @@
             padding: 0 24px;
         }
 
-        /* UPDATED: LOGO SIZE INCREASED */
         .logo-img {
-            height: 65px; /* Increased from 50px */
+            height: 65px;
             width: auto;
             display: block;
         }
@@ -73,7 +72,6 @@
             color: var(--primary-blue);
         }
         
-        /* --- BUTTONS --- */
         .btn-primary {
             background-color: var(--primary-blue);
             color: white !important;
@@ -93,32 +91,31 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            padding: 120px 20px; /* Increased top/bottom padding for better spacing */
+            padding: 120px 20px;
             text-align: center;
             background: linear-gradient(135deg, #0052cc 0%, #2684ff 100%);
             color: white;
         }
         .hero h1 {
             font-size: 3.5rem;
-            margin: 0 auto 30px auto; /* More space below headline */
+            margin: 0 auto 30px auto;
             font-weight: 800;
             letter-spacing: -1px;
             max-width: 900px;
             line-height: 1.2;
         }
-        /* UPDATED: Better text alignment and spacing */
         .hero p {
-            font-size: 1.4rem; /* Larger text */
-            line-height: 1.8;  /* More breathing room between lines */
-            color: #e6effc;    /* Softer white for readability */
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #e6effc;
             max-width: 700px;
-            margin: 0 auto 50px auto; /* More space before button */
+            margin: 0 auto 50px auto;
         }
         
         .btn-white {
             background-color: white;
             color: var(--primary-blue) !important;
-            padding: 16px 36px; /* Slightly larger button */
+            padding: 16px 36px;
             border-radius: 4px;
             font-weight: bold;
             font-size: 1.1rem;
@@ -132,7 +129,64 @@
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
 
-        /* --- CARDS SECTION --- */
+        /* --- NEW SECTION: MOVING BOXES (MARQUEE) --- */
+        .ticker-wrap {
+            width: 100%;
+            background-color: var(--light-bg);
+            padding: 60px 0;
+            overflow: hidden; /* Hide scrollbars */
+            border-bottom: 1px solid #dfe1e6;
+        }
+        
+        .ticker-heading {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--text-main);
+        }
+
+        .ticker {
+            display: flex;
+            width: fit-content;
+            animation: ticker 30s linear infinite; /* The moving animation */
+        }
+        
+        /* Pause animation on hover so users can read */
+        .ticker:hover {
+            animation-play-state: paused; 
+        }
+
+        .ticker-item {
+            background: white;
+            border: 1px solid #dfe1e6;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 0 15px;
+            width: 300px; /* Fixed width for cards */
+            flex-shrink: 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-blue);
+        }
+        
+        .ticker-item h4 {
+            font-size: 1.25rem;
+            color: var(--primary-blue);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .ticker-item p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Moves left */
+        }
+
+        /* --- STATIC SKILLS GRID (Kept for structure) --- */
         .container {
             max-width: 1200px;
             margin: auto;
@@ -208,7 +262,6 @@
             margin-top: 25px;
         }
 
-        /* --- FOOTER --- */
         footer {
             background-color: var(--text-main);
             color: white;
@@ -222,7 +275,8 @@
             .hero h1 { font-size: 2.5rem; }
             .header-container { flex-direction: column; gap: 15px; }
             nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
-            .logo-img { height: 55px; } /* Slightly smaller on mobile to fit screen */
+            .logo-img { height: 55px; }
+            .ticker-item { width: 260px; } /* Smaller cards on mobile */
         }
     </style>
 </head>
@@ -253,23 +307,61 @@
         <a href="#signup" class="btn-white">Start Learning</a>
     </div>
 
+    <div class="ticker-wrap">
+        <h2 class="ticker-heading">Comprehensive Curriculum</h2>
+        <div class="ticker">
+            <div class="ticker-item">
+                <h4>Data Structures & Algo</h4>
+                <p>Master the core patterns. From Arrays to Graphs, learn to solve complex algorithmic problems with optimized time and space complexity.</p>
+            </div>
+            <div class="ticker-item">
+                <h4>System Design</h4>
+                <p>Architect scalable systems. Learn to balance trade-offs, design distributed databases, and handle millions of users effectively.</p>
+            </div>
+            <div class="ticker-item">
+                <h4>Behavioral</h4>
+                <p>Ace the "soft skills" check. Master the STAR method and Leadership Principles to tell compelling stories that highlight your impact.</p>
+            </div>
+            <div class="ticker-item">
+                <h4>Mock Interview</h4>
+                <p>Practice makes perfect. Simulate real pressure with expert engineers and get actionable feedback to eliminate surprises.</p>
+            </div>
+
+            <div class="ticker-item">
+                <h4>Data Structures & Algo</h4>
+                <p>Master the core patterns. From Arrays to Graphs, learn to solve complex algorithmic problems with optimized time and space complexity.</p>
+            </div>
+            <div class="ticker-item">
+                <h4>System Design</h4>
+                <p>Architect scalable systems. Learn to balance trade-offs, design distributed databases, and handle millions of users effectively.</p>
+            </div>
+            <div class="ticker-item">
+                <h4>Behavioral</h4>
+                <p>Ace the "soft skills" check. Master the STAR method and Leadership Principles to tell compelling stories that highlight your impact.</p>
+            </div>
+            <div class="ticker-item">
+                <h4>Mock Interview</h4>
+                <p>Practice makes perfect. Simulate real pressure with expert engineers and get actionable feedback to eliminate surprises.</p>
+            </div>
+        </div>
+    </div>
     <div class="container">
-        <h2 class="section-title">Your Path to Success</h2>
+        <h2 class="section-title">Why Choose Crack Tech?</h2>
         
         <div class="skills-grid">
             <div class="skill-card" id="interview">
-                <h3>01. Interview Prep</h3>
-                <p>Mock interviews, behavioral questions, and negotiation strategies. Learn how to communicate your solutions effectively under pressure.</p>
+                <h3>01. Expert Guidance</h3>
+                <p>Our curriculum is designed by engineers from top tech companies who know exactly what interviewers are looking for.</p>
             </div>
 
             <div class="skill-card" id="design">
-                <h3>02. System Design</h3>
-                <p>Learn to architect scalable systems. From load balancers to database sharding, master the high-level concepts for Senior roles.</p>
+                <h3>02. Proven Results</h3>
+                <p>Join hundreds of candidates who have successfully landed offers at FAANG and top-tier tech startups.</p>
             </div>
 
             <div class="skill-card" id="coding">
-                <h3>03. Coding Mastery</h3>
-                <p>Deep dives into Python, Java, and C++. Master LeetCode patterns and write clean, production-ready code that interviewers love.</p>
+                <h3>03. Tailored Feedback</h3>
+                <p>Get personalized roadmaps and feedback loops that focus on your specific weaknesses, not generic advice.</p>
             </div>
         </div>
     </div>
