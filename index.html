@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crack Tech - Master the Interview</title>
+    <link rel="icon" type="image/png" href="crack-tech-logo.png">
     <style>
         /* --- BLUE & WHITE PROFESSIONAL THEME --- */
         :root {
@@ -29,7 +30,7 @@
         header {
             background: #ffffff;
             border-bottom: 1px solid #dfe1e6;
-            padding: 0.8rem 0; /* Slightly taller for the logo */
+            padding: 0.8rem 0;
             position: sticky;
             top: 0;
             width: 100%;
@@ -46,9 +47,9 @@
             padding: 0 24px;
         }
 
-        /* LOGO STYLING */
+        /* UPDATED: LOGO SIZE INCREASED */
         .logo-img {
-            height: 50px; /* Adjusted height for the new logo */
+            height: 65px; /* Increased from 50px */
             width: auto;
             display: block;
         }
@@ -92,37 +93,43 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            padding: 100px 20px;
+            padding: 120px 20px; /* Increased top/bottom padding for better spacing */
             text-align: center;
             background: linear-gradient(135deg, #0052cc 0%, #2684ff 100%);
             color: white;
         }
         .hero h1 {
             font-size: 3.5rem;
-            margin: 0 0 20px 0;
-            font-weight: 700;
-            letter-spacing: -0.5px;
+            margin: 0 auto 30px auto; /* More space below headline */
+            font-weight: 800;
+            letter-spacing: -1px;
+            max-width: 900px;
+            line-height: 1.2;
         }
+        /* UPDATED: Better text alignment and spacing */
         .hero p {
-            font-size: 1.3rem;
-            color: #deebff;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
+            font-size: 1.4rem; /* Larger text */
+            line-height: 1.8;  /* More breathing room between lines */
+            color: #e6effc;    /* Softer white for readability */
+            max-width: 700px;
+            margin: 0 auto 50px auto; /* More space before button */
         }
         
         .btn-white {
             background-color: white;
             color: var(--primary-blue) !important;
-            padding: 14px 32px;
+            padding: 16px 36px; /* Slightly larger button */
             border-radius: 4px;
             font-weight: bold;
+            font-size: 1.1rem;
             text-decoration: none;
             transition: transform 0.2s;
             display: inline-block;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .btn-white:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
 
         /* --- CARDS SECTION --- */
@@ -215,6 +222,7 @@
             .hero h1 { font-size: 2.5rem; }
             .header-container { flex-direction: column; gap: 15px; }
             nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .logo-img { height: 55px; } /* Slightly smaller on mobile to fit screen */
         }
     </style>
 </head>
@@ -238,7 +246,10 @@
 
     <div class="hero" id="home">
         <h1>Master Your Interview and Boost Your Earnings</h1>
-        <p>Master Data Structures, Algorithms, and System Design.<br>Get the guidance you need to land your dream role.</p>
+        <p>
+            Master Data Structures, Algorithms, and System Design.<br>
+            Get the guidance you need to land your dream role.
+        </p>
         <a href="#signup" class="btn-white">Start Learning</a>
     </div>
 
@@ -283,4 +294,3 @@
 
 </body>
 </html>
-
