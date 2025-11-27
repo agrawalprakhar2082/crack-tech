@@ -5,37 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crack Tech - Master the Interview</title>
     <style>
-        /* --- HELLO INTERVIEW STYLE THEME --- */
+        /* --- BLUE & WHITE THEME --- */
         :root {
-            --bg-color: #0f1115;      /* Deep Obsidian Background */
-            --card-bg: #1c1e26;       /* Lighter Card Background */
-            --primary-text: #ffffff;  /* Pure White Text */
-            --secondary-text: #9ca3af;/* Soft Grey Text */
-            --accent-color: #facc15;  /* Electric Gold/Yellow */
-            --accent-hover: #eab308;  /* Slightly darker Gold on hover */
-            --border-color: #2d3039;  /* Subtle borders */
+            --bg-color: #ffffff;          /* Pure White */
+            --primary-blue: #0052cc;      /* Professional Tech Blue */
+            --dark-blue: #0747a6;         /* Darker Blue for hover/hero */
+            --text-main: #172b4d;         /* Dark Navy/Grey for text */
+            --text-secondary: #5e6c84;    /* Light Grey for subtitles */
+            --light-bg: #f4f5f7;          /* Very light grey for sections */
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            color: var(--primary-text);
+            color: var(--text-main);
             background-color: var(--bg-color);
             scroll-behavior: smooth;
         }
         
-        /* --- HEADER --- */
+        /* --- HEADER (Clean White) --- */
         header {
-            background: rgba(15, 17, 21, 0.95); /* Semi-transparent dark */
-            border-bottom: 1px solid var(--border-color);
+            background: #ffffff;
+            border-bottom: 1px solid #dfe1e6;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             width: 100%;
             z-index: 1000;
-            backdrop-filter: blur(10px); /* Modern blur effect */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         
         .header-container {
@@ -48,7 +47,7 @@
         }
 
         .logo-img {
-            height: 40px;
+            height: 45px;
             width: auto;
             display: block;
         }
@@ -59,68 +58,72 @@
             display: flex;
             align-items: center;
             margin: 0;
-            gap: 30px; /* Space between items */
+            gap: 30px;
         }
         nav ul li a {
-            color: var(--secondary-text);
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 15px;
             font-weight: 500;
             transition: color 0.2s;
         }
         nav ul li a:hover {
-            color: var(--primary-text);
+            color: var(--primary-blue); /* Turns blue on hover */
         }
         
-        /* --- SIGN UP BUTTON (Yellow Accent) --- */
-        .signup-tab {
-            background-color: var(--accent-color);
-            color: #000000 !important; /* Black text on yellow for contrast */
+        /* --- BUTTONS --- */
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: white !important;
             padding: 10px 24px;
-            border-radius: 6px;
+            border-radius: 4px;
             font-weight: 600;
-            transition: transform 0.2s, background-color 0.2s;
+            text-decoration: none;
+            transition: background 0.2s;
             border: none;
+            cursor: pointer;
+            display: inline-block;
         }
-        .signup-tab:hover {
-            background-color: var(--accent-hover);
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
             transform: translateY(-1px);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION (Blue Gradient) --- */
         .hero {
-            padding: 120px 20px;
+            padding: 100px 20px;
             text-align: center;
-            background: radial-gradient(circle at top, #2d2d3a 0%, var(--bg-color) 60%);
+            /* Professional Blue Gradient */
+            background: linear-gradient(135deg, #0052cc 0%, #2684ff 100%);
+            color: white;
         }
         .hero h1 {
             font-size: 3.5rem;
             margin: 0 0 20px 0;
-            letter-spacing: -1px;
-            background: linear-gradient(to right, #fff, #cbd5e1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
         .hero p {
-            font-size: 1.25rem;
-            color: var(--secondary-text);
+            font-size: 1.3rem;
+            color: #deebff; /* Very light blue text */
             max-width: 600px;
             margin: 0 auto 40px auto;
         }
-        .hero-btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #000000;
+        
+        /* Inverted button for the blue background */
+        .btn-white {
+            background-color: white;
+            color: var(--primary-blue) !important;
             padding: 14px 32px;
-            text-decoration: none;
-            border-radius: 6px;
+            border-radius: 4px;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.2s;
+            text-decoration: none;
+            transition: transform 0.2s;
+            display: inline-block;
         }
-        .hero-btn:hover {
-            background-color: var(--accent-hover);
-            box-shadow: 0 0 20px rgba(250, 204, 21, 0.3); /* Yellow glow */
+        .btn-white:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         /* --- CARDS SECTION --- */
@@ -133,78 +136,79 @@
             text-align: center;
             margin-bottom: 60px;
             font-size: 2.2rem;
-            color: var(--primary-text);
+            color: var(--text-main);
         }
         
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
+            gap: 30px;
         }
         .skill-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            background: white;
+            border: 1px solid #dfe1e6;
+            border-radius: 8px;
             padding: 40px 30px;
             text-align: left;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         .skill-card:hover {
             transform: translateY(-5px);
-            border-color: var(--accent-color);
+            border-top: 4px solid var(--primary-blue); /* Blue accent on hover */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
         .skill-card h3 {
             margin-top: 0;
             font-size: 1.5rem;
-            color: var(--primary-text);
+            color: var(--primary-blue);
             margin-bottom: 15px;
         }
         .skill-card p {
-            color: var(--secondary-text);
+            color: var(--text-secondary);
             font-size: 1rem;
             margin-bottom: 0;
         }
 
-        /* --- EMAIL FORM SECTION --- */
+        /* --- FORM SECTION --- */
         .signup-section {
-            background: linear-gradient(180deg, var(--card-bg) 0%, var(--bg-color) 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
+            background-color: var(--light-bg);
+            border-radius: 12px;
             text-align: center;
             padding: 60px 20px;
             margin-top: 60px;
         }
         input[type="email"] {
-            padding: 16px;
+            padding: 15px;
             width: 100%;
             max-width: 380px;
-            background: #0f1115;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            color: white;
+            background: white;
+            border: 1px solid #dfe1e6;
+            border-radius: 4px;
+            color: var(--text-main);
             margin-right: 10px;
             font-size: 16px;
         }
         input[type="email"]:focus {
-            outline: none;
-            border-color: var(--accent-color);
+            outline: 2px solid var(--primary-blue);
+            border-color: var(--primary-blue);
         }
-        /* Mobile adjustment for form */
+        
         form {
             display: flex;
             justify-content: center;
             gap: 10px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 25px;
         }
 
         /* --- FOOTER --- */
         footer {
-            border-top: 1px solid var(--border-color);
+            background-color: var(--text-main); /* Dark footer */
+            color: white;
             padding: 40px 0;
             margin-top: 80px;
             text-align: center;
-            color: var(--secondary-text);
             font-size: 0.9rem;
         }
 
@@ -227,7 +231,7 @@
                     <li><a href="#interview">Interview Prep</a></li>
                     <li><a href="#design">System Design</a></li>
                     <li><a href="#coding">Coding Mastery</a></li>
-                    <li><a href="#signup" class="signup-tab">Sign Up</a></li>
+                    <li><a href="#signup" class="btn-primary">Sign Up</a></li>
                 </ul>
             </nav>
         </div>
@@ -236,7 +240,7 @@
     <div class="hero" id="home">
         <h1>Crack the Tech Interview</h1>
         <p>Master Data Structures, Algorithms, and System Design.<br>Get the guidance you need to land your dream role.</p>
-        <a href="#signup" class="hero-btn">Start Learning</a>
+        <a href="#signup" class="btn-white">Start Learning</a>
     </div>
 
     <div class="container">
@@ -244,17 +248,17 @@
         
         <div class="skills-grid">
             <div class="skill-card" id="interview">
-                <h3 style="color: var(--accent-color);">01. Interview Prep</h3>
+                <h3>01. Interview Prep</h3>
                 <p>Mock interviews, behavioral questions, and negotiation strategies. Learn how to communicate your solutions effectively under pressure.</p>
             </div>
 
             <div class="skill-card" id="design">
-                <h3 style="color: var(--accent-color);">02. System Design</h3>
+                <h3>02. System Design</h3>
                 <p>Learn to architect scalable systems. From load balancers to database sharding, master the high-level concepts for Senior roles.</p>
             </div>
 
             <div class="skill-card" id="coding">
-                <h3 style="color: var(--accent-color);">03. Coding Mastery</h3>
+                <h3>03. Coding Mastery</h3>
                 <p>Deep dives into Python, Java, and C++. Master LeetCode patterns and write clean, production-ready code that interviewers love.</p>
             </div>
         </div>
@@ -262,22 +266,21 @@
 
     <div class="container" id="signup">
         <div class="signup-section">
-            <h2 style="margin-top: 0;">Book Your Free Introduction</h2>
-            <p style="color: var(--secondary-text);">Ready to level up? Enter your email to schedule a 15-minute roadmap session.</p>
+            <h2 style="margin-top: 0; color: var(--text-main);">Book Your Free Introduction</h2>
+            <p style="color: var(--text-secondary);">Ready to level up? Enter your email to schedule a 15-minute roadmap session.</p>
             
             <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
                 <input type="email" name="email" placeholder="Enter your email address..." required>
-                <button type="submit" class="signup-tab" style="cursor: pointer;">Get Roadmap</button>
+                <button type="submit" class="btn-primary">Get Roadmap</button>
             </form>
             
-            <p style="margin-top: 20px; font-size: 0.85em; color: #555;">No spam. Just code.</p>
+            <p style="margin-top: 20px; font-size: 0.85em; color: #6b778c;">No spam. Just code.</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Crack Tech. All rights are not reserved.</p>
+        <p>&copy; 2024 Crack Tech. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
-
