@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crack Tech - Master the Interview</title>
     <style>
-        /* --- BLUE & WHITE THEME --- */
+        /* --- BLUE & WHITE PROFESSIONAL THEME --- */
         :root {
             --bg-color: #ffffff;          /* Pure White */
-            --primary-blue: #0052cc;      /* Professional Tech Blue */
-            --dark-blue: #0747a6;         /* Darker Blue for hover/hero */
-            --text-main: #172b4d;         /* Dark Navy/Grey for text */
-            --text-secondary: #5e6c84;    /* Light Grey for subtitles */
-            --light-bg: #f4f5f7;          /* Very light grey for sections */
+            --primary-blue: #0052cc;      /* Tech Blue */
+            --dark-blue: #0747a6;         /* Darker Blue */
+            --text-main: #172b4d;         /* Navy/Black */
+            --text-secondary: #5e6c84;    /* Soft Grey */
+            --light-bg: #f4f5f7;          /* Light Grey Backgrounds */
         }
 
         body {
@@ -25,11 +25,11 @@
             scroll-behavior: smooth;
         }
         
-        /* --- HEADER (Clean White) --- */
+        /* --- HEADER --- */
         header {
             background: #ffffff;
             border-bottom: 1px solid #dfe1e6;
-            padding: 1rem 0;
+            padding: 0.8rem 0; /* Slightly taller for the logo */
             position: sticky;
             top: 0;
             width: 100%;
@@ -46,8 +46,9 @@
             padding: 0 24px;
         }
 
+        /* LOGO STYLING */
         .logo-img {
-            height: 45px;
+            height: 50px; /* Adjusted height for the new logo */
             width: auto;
             display: block;
         }
@@ -68,7 +69,7 @@
             transition: color 0.2s;
         }
         nav ul li a:hover {
-            color: var(--primary-blue); /* Turns blue on hover */
+            color: var(--primary-blue);
         }
         
         /* --- BUTTONS --- */
@@ -89,11 +90,10 @@
             transform: translateY(-1px);
         }
 
-        /* --- HERO SECTION (Blue Gradient) --- */
+        /* --- HERO SECTION --- */
         .hero {
             padding: 100px 20px;
             text-align: center;
-            /* Professional Blue Gradient */
             background: linear-gradient(135deg, #0052cc 0%, #2684ff 100%);
             color: white;
         }
@@ -105,12 +105,11 @@
         }
         .hero p {
             font-size: 1.3rem;
-            color: #deebff; /* Very light blue text */
+            color: #deebff;
             max-width: 600px;
             margin: 0 auto 40px auto;
         }
         
-        /* Inverted button for the blue background */
         .btn-white {
             background-color: white;
             color: var(--primary-blue) !important;
@@ -155,7 +154,7 @@
         }
         .skill-card:hover {
             transform: translateY(-5px);
-            border-top: 4px solid var(--primary-blue); /* Blue accent on hover */
+            border-top: 4px solid var(--primary-blue);
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
         .skill-card h3 {
@@ -204,7 +203,7 @@
 
         /* --- FOOTER --- */
         footer {
-            background-color: var(--text-main); /* Dark footer */
+            background-color: var(--text-main);
             color: white;
             padding: 40px 0;
             margin-top: 80px;
@@ -284,4 +283,3 @@
 
 </body>
 </html>
-
